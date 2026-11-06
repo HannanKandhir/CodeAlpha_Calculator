@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="A responsive calculator with keyboard support, themes and calculation history.">
+  <title>NovaCalc | CodeAlpha Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="NovaCalc home">
+        <span class="brand-symbol" aria-hidden="true">✳</span>
+        <span>
+          nova<span class="brand-accent">calc</span><span class="brand-dot">.</span>
+        </span>
+      </a>
+
+      <div class="header-right">
+        <span class="project-tag">
+          <span class="status-dot"></span>
+          FRONTEND PROJECT
+        </span>
+
+        <button class="theme-toggle" type="button"
+                id="themeToggle"
+                aria-label="Switch to light mode"
+                title="Toggle theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+               fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <span id="themeLabel">Light mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="intro">
+        <p class="eyebrow">
+          <span class="eyebrow-line"></span>
+          YOUR EVERYDAY NUMBER TOOL
+        </p>
+
+        <h1>Make every <span>number count.</span></h1>
+
+        <p class="intro-copy">
+          A little math, a lot of clarity.
+          Fast calculations, thoughtful details,
+          and zero distractions.
+        </p>
+      </div>
+
+      <div class="workspace">
+
+        <!-- CALCULATOR -->
+        <section class="calculator-card" aria-label="Calculator">
+          <div class="card-topline">
+            <span class="card-caption">
+              <span class="live-indicator"></span>
+              STANDARD CALCULATOR
+            </span>
+
+            <button type="button" class="icon-button"
+                    id="copyButton" title="Copy result"
+                    aria-label="Copy displayed number">
+              <svg viewBox="0 0 24 24" aria-hidden="true"
+                   fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round">
+                <rect x="8" y="8" width="12" height="12" rx="2"/>
+                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="display">
+            <p class="expression" id="expression">
+              Ready to calculate
+            </p>
+            <output class="result" id="display"
+                    aria-label="Calculator result"
+                    aria-live="polite"
+                    aria-atomic="true">0</output>
+          </div>
+
+          <div class="keypad" id="keypad">
+            <button class="key utility" type="button"
+                    data-action="clear">AC</button>
+            <button class="key utility" type="button"
+                    data-action="sign">+/−</button>
+            <button class="key utility" type="button"
+                    data-action="percent">%</button>
+            <button class="key operator" type="button"
+                    data-operator="/">÷</button>
+
+            <button class="key" type="button" data-digit="7">7</button>
+            <button class="key" type="button" data-digit="8">8</button>
+            <button class="key" type="button" data-digit="9">9</button>
+            <button class="key operator" type="button"
+                    data-operator="*">×</button>
+
+            <button class="key" type="button" data-digit="4">4</button>
+            <button class="key" type="button" data-digit="5">5</button>
+            <button class="key" type="button" data-digit="6">6</button>
+            <button class="key operator" type="button"
+                    data-operator="-">−</button>
+
+            <button class="key" type="button" data-digit="1">1</button>
+            <button class="key" type="button" data-digit="2">2</button>
+            <button class="key" type="button" data-digit="3">3</button>
+            <button class="key operator" type="button"
+                    data-operator="+">+</button>
+
+            <button class="key zero" type="button"
+                    data-digit="0">0</button>
+            <button class="key" type="button"
+                    data-action="decimal">.</button>
+            <button class="key equals" type="button"
+                    data-action="equals">=</button>
+          </div>
+
+          <div class="calc-footer">
+            <span>
+              <kbd>Enter</kbd> equals
+              <span class="separator">·</span>
+              <kbd>Esc</kbd> clear
+            </span>
+
+            <button class="backspace" id="backspaceButton"
+                    type="button" aria-label="Delete last digit">
+              <svg viewBox="0 0 24 24" aria-hidden="true"
+                   fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round">
+                <path d="M9 4H20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9L2 12l7-8Z"/>
+                <path d="m12 9 6 6m0-6-6 6"/>
+              </svg>
+              DEL
+            </button>
+          </div>
+        </section>
+
+        <!-- HISTORY PANEL -->
+        <aside class="history-card" aria-label="Calculation history">
+          <div class="history-header">
+            <div>
+              <p class="panel-eyebrow">YOUR WORKSPACE</p>
+              <h2>
+                History
+                <span id="historyCount" class="count">0</span>
+              </h2>
+            </div>
+
+            <button type="button" class="clear-history"
+                    id="clearHistory">
+              Clear all
+            </button>
+          </div>
+
+          <p class="history-description">
+            Your recent calculations, all in one place.
+            Select a result to reuse it.
+          </p>
+
+          <div id="historyList" class="history-list">
+            <div class="history-empty">
+              <span class="empty-icon" aria-hidden="true">↗</span>
+              <strong>Nothing here yet</strong>
+              <span>
+                Your calculations will show up as you go.
+              </span>
+            </div>
+          </div>
+
+          <div class="history-bottom">
+            <span class="small-star">✳</span>
+            Saved on this device only
+          </div>
+        </aside>
+      </div>
+
+      <p class="bottom-note">
+        BUILT WITH <strong>HTML</strong>
+        <span>✦</span>
+        <strong>CSS</strong>
+        <span>✦</span>
+        <strong>JAVASCRIPT</strong>
+      </p>
+    </main>
+
+ 
+<footer class="site-footer">
+    <span>© 2026 NovaCalc | CodeAlpha Frontend Internship</span>
+
+    <span class="developer-credit">
+        Designed & Developed by
+        <strong>Abdul Hannan Kandhir</strong>
+    </span>
+</footer>
+
+
+  <div class="toast" id="toast"
+       role="status" aria-live="polite"></div>
+</body>
+</html>
