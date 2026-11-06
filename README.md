@@ -1,33 +1,36 @@
 
-# NovaCalc - Modern Calculator
+# NovaCalc | Modern Online Calculator
 
-A responsive calculator web application built using
-HTML, CSS, and JavaScript for the CodeAlpha
-Frontend Development Internship.
+A free, modern, responsive calculator web application
+created by **Abdul Hannan Kandhir**.
 
-## Project Overview
+## About NovaCalc
 
-NovaCalc is a clean, modern calculator designed
-to make everyday calculations simple and convenient.
+NovaCalc is a personal web development project
+designed to make everyday calculations simple,
+fast, and convenient.
 
-The project focuses on user experience, responsive
-web design, and JavaScript functionality.
+Built with HTML, CSS, and JavaScript, NovaCalc
+combines a clean design with useful features.
+
+## Live Website
+
+https://hannankandhir.github.io/CodeAlpha_Calculator/
 
 ## Features
 
-- Addition, subtraction, multiplication, division
+- Addition, subtraction, multiplication, and division
 - Decimal calculations
 - Percentage calculations
 - Positive and negative numbers
-- Keyboard support
-- Dark and light themes
+- Full keyboard support
+- Dark and light modes
 - Calculation history
-- Reuse previous calculation results
+- Reuse previous results
 - Copy results to clipboard
 - Division-by-zero error handling
-- Responsive mobile-friendly interface
-- Smooth button interactions
-- Local browser storage for history and preferences
+- Responsive design for mobile and desktop
+- Local storage for history and preferences
 
 ## Technologies Used
 
@@ -35,21 +38,21 @@ web design, and JavaScript functionality.
 - CSS3
 - JavaScript
 - Browser Local Storage
+- GitHub Pages
 
-## How to Run
+## Getting Started
 
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open index.html in your browser.
-4. Start calculating.
+1. Download or clone the repository.
+2. Open index.html in your browser.
+3. Start calculating.
 
-No installation or backend server is required.
+No installation or backend is required.
 
 ## Keyboard Shortcuts
 
-| Key | Function |
-|-----|----------|
-| 0-9 | Numbers |
+| Key | Action |
+| --- | --- |
+| 0-9 | Enter numbers |
 | + | Addition |
 | - | Subtraction |
 | * | Multiplication |
@@ -60,26 +63,26 @@ No installation or backend server is required.
 | % | Percentage |
 | . | Decimal |
 
-## Project Files
-
-- index.html - Webpage structure
-- style.css - Application styling
-- script.js - Calculator logic
-- README.md - Project documentation
-
-## Future Improvements
-
-- Scientific calculator mode
-- Additional math functions
-- Export calculation history
-
-## Internship
-
-Developed as part of the CodeAlpha
-Frontend Development Internship.
-
-## Author
+## Creator
 
 **Abdul Hannan Kandhir**
 
-Frontend Developer | CodeAlpha Frontend Development Intern
+Independent Frontend Developer
+
+GitHub:
+https://github.com/HannanKandhir
+
+## Project History
+
+NovaCalc began as a frontend development project
+during a CodeAlpha internship.
+
+It is presented and maintained as a personal
+calculator web application.
+
+## Copyright
+
+© 2026 NovaCalc.
+
+Original code and design contributions are subject
+to applicable ownership and licensing terms.
